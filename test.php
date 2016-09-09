@@ -13,3 +13,4 @@
     echo "$literalStr". "<br>";
     $literalStr = "my $varyStr will print";
     echo "$literalStr". "<br>";
+    
