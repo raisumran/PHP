@@ -4,21 +4,24 @@
     require("functions.php");
 function addFunctionTest()
 {
-    echo "muhammad Sumran";
-    $ans = addFunction(10, 20);
-    if ($ans ==  30) {
-        echo "test1 passed";
-    } else {
-        echo "test1 failed";
-        # need to do error handling may be throw an exception
+    try {
+        $ans = addFunction(10, 20);
+        if ($ans ==  30) {
+            echo "test1 passed <br>";
+        } else {
+            $error = " test 1 failed <br>";
+            throw new Exception($error);
+        }
+        $ans = addFunction(-10, -20);
+        if ($ans ==  -30) {
+            echo "test2 passed <br>";
+        } else {
+            $error = " test 2 failed <br>";
+            throw new Exception($error);
+        }
+            echo "addFunction works <br>";
+    } catch (Exception $e){
+        echo 'Caught exception:   ',  $e->getMessage(), "\n";
     }
-    $ans = addFunction(-10, -20);
-    if ($ans ==  -30) {
-        echo "test2 passed";
-    } else {
-        echo "test2 failed";
-        # need to do error handling , may be throw an exception
-    }
-        echo "addFunction works";
 }
 addFunctionTest();
